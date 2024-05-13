@@ -1,0 +1,7 @@
+% data
+
+# plotxy
+R -e 'x <- read.table("stdin", header = F); x11(); plot(x, xlab = "<xlab>", ylab = "<ylab>"); while (!is.null(dev.list())) Sys.sleep(1)'
+
+$ xlab : echo 'x'
+$ ylab : echo 'y'

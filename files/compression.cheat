@@ -1,0 +1,12 @@
+% compression
+
+# tar files
+tar cf <name>.tar <files>
+
+# tar files with gzip
+tar czf <name>.tar.gz <files> 
+
+# list tar contents
+tar tvf <tarfile>
+
+

@@ -1,0 +1,17 @@
+% parallel
+
+# command over files
+parallel <command> ::: <files>
+
+# command over range
+parallel <command> <filename> {}.<extension> ::: {<start>..<end>}
+
+# command over extension
+parallel <command> ::: *.<extension>
+
+# command over extension with options
+parallel <command> <extension_action> ::: */*.<extension>
+
+$files: fd --type f --no-ignore --- --multi --expand --bind 'ctrl-a:select-all'
+$extension_action: echo '{}:none;{.}:strip extension;{/}:strip path;{/.}:strip path and extension;{//}:strip file and extension' | tr ';' '\n' --- --delimiter : --column 1 --fzf-overrides "--with-nth=2.."
+$extension_files: fd --extension <extension> --- --filter

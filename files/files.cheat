@@ -1,0 +1,12 @@
+% files
+
+# copy here
+cp <file_in> .
+
+# move here
+mv <file_in> .
+
+# link here
+ln -s ~/<file_in> .
+
+$ file_in: cd && fd -t f

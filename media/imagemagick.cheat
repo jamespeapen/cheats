@@ -1,0 +1,15 @@
+% images
+
+; test comment TODO
+# reduce image size
+convert -scale <scale_percent>% <image> <output>
+
+# convert image size
+convert -scale <scale_percent>% <image> <output>
+
+# convert svg to pdf
+inkscape --export-filename=<output_file>.pdf --export-dpi=<dpi> --export-type pdf <svg_file>
+
+$image: fd -t f --extension png --extension jpg --extension jpeg --extension webm --extension gif --extension tiff --extension raw --no-ignore
+$dpi: echo 300
+$export_format: echo 'pdf eps ps' | tr ' ' '\n' --- --expand

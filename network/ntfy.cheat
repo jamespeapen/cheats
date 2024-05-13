@@ -1,0 +1,19 @@
+% ntfy
+
+# ntfy
+ntfy pub "$<topic>" <message>
+
+# ntfy url
+ntfy pub --click <url> "$<topic>" <message>
+
+# send file
+ntfy pub --file <file> "$<topic>"
+
+# reminder
+ntfy pub --at=`date -d "<date_select> <time>" +%s` "$<topic>" <message>
+
+$ topic : echo ${TOPICS} | tr ' ' '\n'
+$ file : fd -t f
+$ url: xclip -selection clipboard -o
+$ date_select: echo "today tomorrow" | tr ' ' '\n' --- --expand
+

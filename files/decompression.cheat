@@ -1,0 +1,17 @@
+% decompression
+
+# Extract the files from a tar
+tar xvf <tar_file>
+
+# Extract files matching a pattern from an archive
+tar xf path/to/source.tar --wildcards "*.html"
+
+# zline count
+zcat <file> | wc -l
+
+# zcol value count
+zcat <file> | awk {'print $<col>'} | sort -k 1n | uniq -c | sort -k 2n | awk {'print $2, $1'}
+
+$ file: fd -t f --no-ignore
+
+

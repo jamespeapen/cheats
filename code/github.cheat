@@ -1,0 +1,4 @@
+% github
+
+# open repo
+git remote show origin | grep Fetch | cut -d ':' -f 3 | sed 's/^/https:\/\/github\.com\//'
